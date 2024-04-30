@@ -1,9 +1,9 @@
 import React, {useState} from 'react'
- import logo from '../assets/logo1.png'
+import ShopMecoGradient from '../constants/ShopMecoGradient'
  import logo2 from '../assets/logo2.png'
  import google from '../assets/google.png'
- import title from '../assets/grp.png'
  import bar from '../assets/bar.png'
+ import Button from '../constants/Button'
 import '../index.css'
 
 
@@ -18,14 +18,8 @@ const Login = () => {
   return (
 
     <div className='md:flex md:flex-row  h-screen w-full'>
-      
-        <div className='w-5/12 hidden md:block bg bg-cover h-screen bg-no-repeat text-white relative'>
-            <img src={logo} alt="logo"  />
-            <div className='absolute top-[240px] left-[15%] right-[15%]'>
-            <img src={title} alt="title"  />
-            </div>
-        </div>
-        
+   
+        <ShopMecoGradient/>
         <div className='flex items-center md:hidden p-6'>
             <button> 
                 <img src={bar} alt="toggle" className='h-[18px] w-[24px] me-6 '/>
@@ -59,7 +53,7 @@ const Login = () => {
   
 
 </div>
-<button  className='w-full bg-black rounded-lg btn-color py-3 mt-10 text-white bg-span-color hover:opacity-90 font-semibold'>Login</button>
+<Button name="Login"></Button>
 <div className='md:hidden flex justify-center mt-4 font-semibold'>
                 <p className=' sm-text me-1'>Don’t have an account? </p>
                 <button className='span-color text-[14px] '>Register</button>
