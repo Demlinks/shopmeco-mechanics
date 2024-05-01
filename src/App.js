@@ -1,5 +1,5 @@
 
-import './App.css';
+
 import Form from './businessRegistration/Form';
 import Register from './businessRegistration/Register';
  import Login from './pages/Login';
@@ -7,8 +7,8 @@ import Register from './businessRegistration/Register';
 function App() {
   return (
     <>
-    <Login/>
-  <Form/>
+   
+  <Login/>
   
  
 
