@@ -1,4 +1,6 @@
 import React, {useState} from 'react'
+import { Link } from 'react-router-dom';
+
 import ShopMecoGradient from '../constants/ShopMecoGradient'
  import logo2 from '../assets/logo2.png'
  import google from '../assets/google.png'
@@ -17,6 +19,7 @@ const Login = () => {
     }
 
     const handleClick = () => {
+      
         console.log('button clicked')
     }
   return (
@@ -31,15 +34,15 @@ const Login = () => {
             <img src={logo2} alt="logo" className='h-[35px]' />
         </div>
         <div className='md:w-7/12  md:flex md:justify-center lg:py-[28px] md:py-[18px]  md:px-[50px]' >
-            <div className=' md:w-[450px] lg:w-[500px] w-full  '>
+            <div className=' md:w-[400px] lg:w-[500px] w-full  mt-8 '>
                 <div className='font-semibold  whitespace-nowrap justify-end hidden md:flex md:pe-4'>
                 <p className=' small-text me-1'>Don’t have an account? </p>
-                <button className='span-color text-[14px] '>Register</button>
+                <Link to="/getstarted" className='span-color text-[14px] '>Register</Link>
                 </div>
-                <div className='md:w-[450px]  w-full md:mt-10 md:px-4 mt-6'>
+                <div className='md:w-[400px]  w-full md:mt-10 md:px-4 mt-6'>
            <h1 className='font-bold text-center md:text-left px-4 md:p-0'>Login</h1>
            <p className=' text-center md:text-left small-text  flex md:block justify-center font-semibold mt-3 md:p-0 px-4 '>Login to your account and explore our services <br className='md:block hidden'/> and proficient technicians.</p>
-            <form className=' mt-10  md:w-[450px] mx-auto p-6 md:p-0 w-full'>
+            <form className=' mt-10  md:w-[350px] lg:w-[450px] mx-auto p-6 md:p-0 w-full'>
 <label className='input-details'>Email address</label> <br/>
 <input type="email" placeholder='Enter your email' className='mt-1  border-2 border-gray-300 w-full rounded-lg p-3 span-color font-medium outline-color  text-[14px]' required/><br/> <br/>
 <label className='input-details'>Password</label> <br/>

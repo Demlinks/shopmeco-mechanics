@@ -1,9 +1,12 @@
 import React from 'react'
+
 import '../index.css'
 
 const AlmostDone = () => {
   return (
-    <div className='almostDone   md:w-[450px] mt-8'>
+    <>
+      
+    <div className='almostDone  mt-8'>
     <label className='input-details'>Workshop Photo</label> <br/>
 <input type="file" placeholder='Enter your fullname' className='mt-1  border-2 border-gray-300 w-full rounded-lg p-3 span-color font-medium outline-color  text-[14px]' required/><br/> <br/>
 <label htmlFor="" className='input-details'>Required Services</label>
@@ -35,6 +38,7 @@ const AlmostDone = () => {
                 </div>
 
 </div>
+</>
   )
 }
 

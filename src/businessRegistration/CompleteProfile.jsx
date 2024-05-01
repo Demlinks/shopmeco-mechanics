@@ -1,7 +1,12 @@
 import React from 'react'
+
+
+
 const CompleteProfile = () => {
   return (
-    <div className='complete md:w-[450px] mt-8'>
+    <>
+ 
+    <div className='complete  mt-8'>
     <label className='input-details'>Your PhoneNumber</label> <br/>
 <input type='tel' placeholder='080xxxxxxxx' className='mt-1  border-2 border-gray-300 w-full rounded-lg p-3 span-color font-medium outline-color  text-[14px]' required/><br/> <br/>
 <label className='input-details'>Workshop name</label> <br/>
@@ -17,6 +22,7 @@ const CompleteProfile = () => {
                 </div>
 
 </div>
+</>
   )
 }
 

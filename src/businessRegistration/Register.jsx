@@ -4,7 +4,9 @@ import '../index.css'
 
 const Register = () => {
   return (
-  <div className='register md:w-[450px] mt-8'>
+    <>
+  
+  <div className='register mt-8'>
        <label className='input-details'>Your fullname</label> <br/>
 <input type="text" placeholder='Enter your fullname' className='mt-1  border-2 border-gray-300 w-full rounded-lg p-3 span-color font-medium outline-color  text-[14px]' required/><br/> <br/>
    <label className='input-details'>Email address</label> <br/>
@@ -18,6 +20,7 @@ const Register = () => {
     </div>
    
   </div>
+  </>
   )
 }
 

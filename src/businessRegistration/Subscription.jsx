@@ -1,8 +1,13 @@
 import React from "react"
+
 import '../index.css'
+
+
 const Subscription = () => {
   return (
-<div className="mt-14  md:w-[450px]">
+    <>
+    
+<div className="mt-14  ">
   <ol className="mt-8">
     <div className="flex">
         <input type="checkbox" className="me-2 " />
@@ -31,6 +36,7 @@ const Subscription = () => {
         
 </ol>
 </div>
+</>
   )
 }
 

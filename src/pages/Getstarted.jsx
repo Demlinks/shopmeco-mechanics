@@ -1,6 +1,30 @@
-import React from 'react'
+import React, {useState} from 'react'
+import { Link } from 'react-router-dom';
+import '../index.css'
+import bar from '../assets/bar.png'
+import logo2 from '../assets/logo2.png'
+import arrow from '../assets/arrow-right.png'
+import business from '../assets/business.png'
+import individual from '../assets/individual.png'
+
+
 import ShopMecoGradient from '../constants/ShopMecoGradient'
 const Getstarted = () => {
+
+    const [isHovered, setIsHovered] = useState(false)
+    const [isHovered1, setIsHovered1] = useState(false)
+    const onHover = () => {
+        setIsHovered(true)
+    }
+    const onHover1 = () => {
+        setIsHovered1(true)
+    }
+    const leaveHover = () => {
+        setIsHovered(false)
+    }
+    const leaveHover1 = () => {
+        setIsHovered1(false)
+    }
   return (
     <div className='md:flex md:flex-row  h-screen w-full'>
    
@@ -12,53 +36,46 @@ const Getstarted = () => {
         <img src={logo2} alt="logo" className='h-[35px]' />
     </div>
     <div className='md:w-7/12  md:flex md:justify-center lg:py-[28px] md:py-[18px]  md:px-[50px]' >
-        <div className=' md:w-[450px] lg:w-[500px] w-full  '>
-            <div className='font-semibold  whitespace-nowrap justify-end hidden md:flex md:pe-4'>
-            <p className=' small-text me-1'>Don’t have an account? </p>
-            <button className='span-color text-[14px] '>Register</button>
+    <div className=' md:w-[400px] lg:w-[500px] w-full  mt-8 px-5 '>
+                <div className='font-semibold  whitespace-nowrap justify-end hidden md:flex md:pe-4'>
+                <p className=' small-text me-1'>Already have an account? </p>
+                <Link to="/login" className='span-color text-[14px] '> Log In</Link>
+                </div>
+               <div className='lg:my-[100px] my-[70px]'>
+                <h1 className='font-bold text-center md:text-left px-4 md:p-0'>Get Started</h1>
+                <div className=' flex flex-col gap-10 mt-8 '>
+                    <Link to='/business-form' className='w-full'>
+                    <button className='shadow-xl  border-2 rounded-lg hover:border-[#5007E0] hover:bg-[#F5F3FF] lg:flex p-8 justify-center w-full items-center transition-colors duration-300 ease-in '  onMouseEnter={onHover1} onMouseLeave={leaveHover1} >
+                        <div className='lg:w-[20%] px-3 flex justify-center mt-2 lg:mt-0 '>
+                        <img src={individual} alt="individual" />
+                        
+                        </div>
+                        <div className='lg:w-[60%] text-center  px-3 lg:text-left mt-4 lg:mt-0  '>
+                            <p className='font-bold text-[18px]'>Individual / Car Owners</p>
+                            <p className='small-text font-semibold'>Personal account to manage your car and keep it in good condition.</p>
+                        </div>
+                        <div className='lg:w-[20%] px-3 flex lg:justify-end justify-center  mt-4 lg:mt-0 '>
+                        {isHovered1 && <img src={arrow} alt="arrow" className='hidden lg:block' />}
+                            </div>
+                        </button>
+                        </Link> 
+                    <button className='shadow-xl  border-2 rounded-lg hover:border-[#5007E0] hover:bg-[#F5F3FF] lg:flex p-8 w-full justify-center items-center transition-colors duration-300 ease-in '  onMouseEnter={onHover} onMouseLeave={leaveHover}>
+                    <div className='lg:w-[20%] px-3 flex justify-center mt-2 lg:mt-0 '>
+                        <img src={business} alt="business" />
+                     
+                        </div>
+                        <div className='lg:w-[60%] text-center  px-3 lg:text-left mt-4 lg:mt-0 '>
+                            <p className='font-bold text-[18px]'>Business</p>
+                            <p className='small-text font-semibold'>Business account for individual service providers and companies.</p>
+                        </div>
+                        <div className='lg:w-[20%] px-3 flex lg:justify-end justify-center  mt-4 lg:mt-0'>
+                          {isHovered && <img src={arrow} alt="arrow" className='hidden lg:block' />}
+                            </div>
+                    </button>
+                    
+                </div>
+             </div>
             </div>
-            <div className='md:w-[450px]  w-full md:mt-10 md:px-4 mt-6'>
-       <h1 className='font-bold text-center md:text-left px-4 md:p-0'>Login</h1>
-       <p className=' text-center md:text-left small-text  flex md:block justify-center font-semibold mt-3 md:p-0 px-4 '>Login to your account and explore our services <br className='md:block hidden'/> and proficient technicians.</p>
-        <form className=' mt-10 mx-auto p-6 md:p-0 w-full'>
-<label className='input-details'>Email address</label> <br/>
-<input type="email" placeholder='Enter your email' className='mt-1  border-2 border-gray-300 w-full rounded-lg p-3 span-color font-medium outline-color  text-[14px]' required/><br/> <br/>
-<label className='input-details'>Password</label> <br/>
-<div className='flex items-center relative'>
-<input type={showPassword ? "text" : "password"} placeholder='Enter your password' className=' mt-1 w-full span-color font-medium rounded-lg p-3 outline-color text-[14px] border-2 border-gray-300' required/>
-<button onClick={toggleVisibility} className='span-color show font-semibold cursor-pointer'>{showPassword ? "hide": "show"}</button>
-</div>
-
-<div className='flex justify-between mt-2 font-semibold text-[14px]'>
-<div className='flex justify-center items-center'>
-    <input type="checkbox"  id="remember" className='me-1' />
-<label htmlFor="remember" className='small-text'>Remember Me</label>
-</div>
-<button className='span-color font-semibold text-[14px]'>Forgot Password?</button>
-
-
-</div>
-<Button name="Login" onClick={handleClick}></Button>
-<div className='md:hidden flex justify-center mt-4 font-semibold'>
-            <p className=' sm-text me-1'>Don’t have an account? </p>
-            <button className='span-color text-[14px] '>Register</button>
-            </div>
-<div className='mt-4 flex justify-center items-center'>
-<hr className='border-t-2 border-gray me-3 w-[50%]' />
-<span  className='text-[12px] font-semibold'>OR</span>
-<hr className='border-t-2 border-gray ms-3 w-[50%]'/>
-</div>
-<button className='w-full mt-6 shadow-md rounded-lg py-3 border-2 font-bold hover:bg-gray-100'>
-<div className='flex justify-center items-center'>
-<img src={google} alt="google" className='me-2 w-[20px] h-[20px]'/>
-<p className='hidden md:block'>Register with Google</p>
-<p className='md:hidden'>Login with Google</p>
-</div>
-
-</button>
-        </form>
-        </div>
-        </div>
     </div>
   
 </div>
