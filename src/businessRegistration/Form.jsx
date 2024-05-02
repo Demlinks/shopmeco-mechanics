@@ -16,19 +16,37 @@ import Subscription from './Subscription'
 
 const Form = () => {
     const [page, setPage] = useState(0)
+    const [formData, setFormData] = useState({
+        fullname: "",
+        email: "",
+        password: "",
+        phone: "",
+        workName: "",
+        workAddress: "",
+        workPhoto: "",
+        workServices: "",
+        checkbox1: false,
+        checkbox2: false,
+        checkbox3: false,
+        checkbox4: false,
+        checkbox5: false,
+
+
+
+    })
     const FormTitles = ["Register Business Account", "Complete Profile", "Almost Done", "Subscription"]
     const ButtonLabels = ["Register Account", "Save & Continue", "Save", "Pay ₦5,000"]
     const pageNumber = ["01","02","03","04"]
     const info = ["Personal Info.", "Service Info.", "Workshop Info.","Subscription"]
     const pageDisplay = () => {
-        if(page == 0){
-       return <Register/>
-        } else if (page == 1){
-       return <CompleteProfile/>
-        }else if (page == 2){
-          return <AlmostDone/>
+        if(page === 0){
+       return <Register formData={formData} setFormData={setFormData}/>
+        } else if (page === 1){
+       return <CompleteProfile formData={formData} setFormData={setFormData}/>
+        }else if (page === 2){
+          return <AlmostDone formData={formData} setFormData={setFormData}/>
             } else{
-                return <Subscription/>
+                return <Subscription formData={formData} setFormData={setFormData}/>
             }
     }
 
@@ -44,7 +62,7 @@ const Form = () => {
     <div className='md:w-7/12 w-full  md:flex md:justify-center lg:py-[28px] md:py-[18px]  md:px-[20px] '>
 <div className='flex flex-col md:w-[400px] lg:w-[500px] mx-auto p-6 md:p-0 w-full '>
         <div className='flex justify-between'>
-          <button disabled={page == 0} onClick={() => {
+          <button disabled={page === 0} onClick={() => {
 setPage((currentPage) => currentPage - 1)}} >
   <span className='small-text font-bold'> {'<'} back </span>
     </button>
@@ -55,18 +73,26 @@ setPage((currentPage) => currentPage - 1)}} >
             <h1>{FormTitles[page]}</h1>
         </div>
         <div className='small-text font-semibold mt-3 text-center md:text-left'>
-     {(page == 0 || page == 1 || page == 2) ?
+     {(page === 0 || page === 1 || page === 2) ?
       "Your details are required to get started with providing services." :
        "Subscribing on Shopmeco is your sure tickets to a lot of opportunities as a technician."}
        </div>
         <div>{pageDisplay()}</div>
 
-<Button name={ButtonLabels[page]}  disabled={page == FormTitles.length - 1} onClick={() => {
-setPage((currentPage) => currentPage + 1)}}  >
+<Button name={ButtonLabels[page]}  
+onClick={
+    () => {
+        if (page === FormTitles.length - 1) {
+            console.log(formData);
+          } else {
+            setPage((currentPage) => currentPage + 1);
+          }
+}
+} >
 
 
 </Button>
-{page == 0 && 
+{page === 0 && 
 <div className=''>
 <div className='mt-4 flex justify-center  items-center'>
     <hr className='border-t-2 border-gray me-3 w-[50%]' />

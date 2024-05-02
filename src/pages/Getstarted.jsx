@@ -39,12 +39,12 @@ const Getstarted = () => {
     <div className=' md:w-[400px] lg:w-[500px] w-full  mt-8 px-5 '>
                 <div className='font-semibold  whitespace-nowrap justify-end hidden md:flex md:pe-4'>
                 <p className=' small-text me-1'>Already have an account? </p>
-                <Link to="/login" className='span-color text-[14px] '> Log In</Link>
+                <Link to="/" className='span-color text-[14px] '> Log In</Link>
                 </div>
                <div className='lg:my-[100px] my-[70px]'>
                 <h1 className='font-bold text-center md:text-left px-4 md:p-0'>Get Started</h1>
                 <div className=' flex flex-col gap-10 mt-8 '>
-                    <Link to='/business-form' className='w-full'>
+                    
                     <button className='shadow-xl  border-2 rounded-lg hover:border-[#5007E0] hover:bg-[#F5F3FF] lg:flex p-8 justify-center w-full items-center transition-colors duration-300 ease-in '  onMouseEnter={onHover1} onMouseLeave={leaveHover1} >
                         <div className='lg:w-[20%] px-3 flex justify-center mt-2 lg:mt-0 '>
                         <img src={individual} alt="individual" />
@@ -58,7 +58,7 @@ const Getstarted = () => {
                         {isHovered1 && <img src={arrow} alt="arrow" className='hidden lg:block' />}
                             </div>
                         </button>
-                        </Link> 
+                        <Link to='/business-form' className='w-full'>
                     <button className='shadow-xl  border-2 rounded-lg hover:border-[#5007E0] hover:bg-[#F5F3FF] lg:flex p-8 w-full justify-center items-center transition-colors duration-300 ease-in '  onMouseEnter={onHover} onMouseLeave={leaveHover}>
                     <div className='lg:w-[20%] px-3 flex justify-center mt-2 lg:mt-0 '>
                         <img src={business} alt="business" />
@@ -72,7 +72,7 @@ const Getstarted = () => {
                           {isHovered && <img src={arrow} alt="arrow" className='hidden lg:block' />}
                             </div>
                     </button>
-                    
+                    </Link>
                 </div>
              </div>
             </div>

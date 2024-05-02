@@ -2,17 +2,22 @@ import React from 'react'
 
 import '../index.css'
 
-const AlmostDone = () => {
+const AlmostDone = ({formData, setFormData}) => {
   return (
     <>
       
     <div className='almostDone  mt-8'>
     <label className='input-details'>Workshop Photo</label> <br/>
-<input type="file" placeholder='Enter your fullname' className='mt-1  border-2 border-gray-300 w-full rounded-lg p-3 span-color font-medium outline-color  text-[14px]' required/><br/> <br/>
+<input type="file" placeholder='Enter your fullname' className='mt-1  border-2 border-gray-300 w-full rounded-lg p-3 span-color font-medium outline-color  text-[14px]' 
+ 
+ onChange={(e) => setFormData({...formData, workPhoto: e.target.files[0]})}
+required/><br/> <br/>
 <label htmlFor="" className='input-details'>Required Services</label>
 <div className='relative inline-block w-full'> 
 <select className="select-service w-full  border-2 border-gray-300 rounded-lg  span-color font-medium  mt-1 block appearance-none   hover:border-gray-500 p-6  shadow focus:outline-none focus:shadow-outline"
-    defaultValue="default">
+   
+    value={formData.workServices} 
+    onChange={(e) => setFormData({...formData,   workServices: e.target.value})}>
 <option disabled value="default">Select an option</option>
     <option value="option1">option1</option>
     <option value="option2">option2</option>
