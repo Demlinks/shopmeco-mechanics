@@ -30,7 +30,7 @@ color: rgba(80, 7, 224, 1);
     opacity: 0.75;
   }
   .outline-color{
-    outline-color:  rgba(80, 7, 224, 1);;
+    outline-color:  rgba(80, 7, 224, 1);
   }
 .small-text{
   color:  rgba(170, 168, 168, 1);
@@ -39,7 +39,7 @@ color: rgba(80, 7, 224, 1);
 }
 .input-details{
   font-weight: 700;
-  font-size: 14px;
+  font-size: 15px;
   color: rgba(105, 111, 121, 1);
 
   
