@@ -13,19 +13,20 @@
     @apply flex flex-row;
     @apply relative;
     @apply bg-white md:bg-[rgba(251,_251,_254,_0.98)];
+  
     @apply w-full;
-    @apply overflow-hidden;
+    /* @apply overflow-hidden; */
   }
 
   /* Navbar */
   .Navbar {
     @apply flex-col;
-    @apply absolute md:static;
+    @apply fixed;
     @apply top-0 z-50;
 
     @apply px-0 md:pl-[27px] md:pr-[25px] lg:pl-10 lg:pr-9;
     @apply bg-[rgba(83,_17,_214,_1)] md:bg-[rgba(80,_7,_224,_1)];
-    @apply h-screen w-full md:basis-[15%] lg:basis-[18%];
+    @apply h-screen w-full md:w-[23%] lg:w-[19.5%] xl:w-[18%];
   }
   /* .Link.active {
     @apply bg-violet-600;
@@ -39,6 +40,9 @@
 
     @apply flex flex-row justify-between;
     @apply p-4 md:px-9 md:py-[14px] lg:px-11 lg:py-[18px] xl:px-[50px] xl:py-[23px];
+    @apply fixed top-0 right-0;
+    @apply left-0 md:left-[23%] lg:left-[19.5%] xl:left-[18%];
+
   }
 
   .Header-Search {
@@ -57,15 +61,24 @@
   .Dashboard {
     @apply text-[rgba(31,_31,_31,_1)];
   }
-  .DashboardContainerOne{
-    @apply mb-8 md:mb-9 lg:mb-10;
+  .DashboardContainerOne {
+    @apply mb-[16px] md:mb-9 lg:mb-10;
   }
 
-  .DashboardStats{
-    @apply flex flex-row items-center justify-between bg-[rgba(255,_225,_229,_1)] rounded-lg;
+  .DashboardStats {
+    @apply flex flex-row items-center rounded-lg;
     @apply px-3 py-[15.5px] md:px-6 md:py-5 xl:pt-[28px] xl:pb-[21px] xl:pl-[40px] xl:pr-[30px];
-    @apply mx-0 mb-4 md:mx-[10px] md:mb-0;
-    @apply basis-full lg:basis-[33.3%]
+    @apply mx-0 mb-4 last-of-type:mb-0 md:mx-[10px] md:mb-0;
+    @apply basis-full md:basis-[33.3%];
+
+    @apply justify-between md:justify-center lg:justify-between;
+  }
+  /* .DashboardStats:not(last-child){
+    @apply mb-0;
+  } */
+  .DashboardLatestReq {
+    @apply bg-white;
+    @apply px-0 py-[16px] md:py-[20px] md:px-[25px] lg:py-[30px] lg:px-[40px];
   }
 }
 

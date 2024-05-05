@@ -82,7 +82,7 @@ const Navbar = ({ toggle, setToggle }) => {
                 //     : { backgroundColor: "transparent" };
                 // }}
               >
-                <div className="w-5 h-auto mr-2 hidden md:block">
+                <div className="min-w-5 h-auto mr-2 hidden md:block">
                   <img
                     src={
                       splitLocation[splitLocation.length - 1] ===
@@ -118,7 +118,7 @@ const Navbar = ({ toggle, setToggle }) => {
                 //     : { backgroundColor: "transparent" };
                 // }}
               >
-                <div className="w-5 h-auto mr-2 hidden md:block">
+                <div className="min-w-5 h-auto mr-2 hidden md:block">
                   <img
                     src={
                       splitLocation[splitLocation.length - 1] ===
