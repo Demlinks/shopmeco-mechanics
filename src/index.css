@@ -1,64 +1,122 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:wght@300;400;500;600;700&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-
-
-
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-
-
-
-
-
-
-.span-color{
-color: rgba(80, 7, 224, 1);
-}
-.bg{
-  background-image: url('../src/assets/bg.png');
-}
-.btn-color{
-  background-color:  rgba(80, 7, 224, 1);
+@layer components {
+  * {
+    @apply box-border;
   }
-  .details{
+  /* DashboardLayout */
+  .DashboardLayout {
+    @apply flex flex-row;
+    @apply relative;
+    @apply bg-white md:bg-[rgba(251,_251,_254,_0.98)];
+    @apply w-full;
+    @apply overflow-hidden;
+  }
+
+  /* Navbar */
+  .Navbar {
+    @apply flex-col;
+    @apply absolute md:static;
+    @apply top-0 z-50;
+
+    @apply px-0 md:pl-[27px] md:pr-[25px] lg:pl-10 lg:pr-9;
+    @apply bg-[rgba(83,_17,_214,_1)] md:bg-[rgba(80,_7,_224,_1)];
+    @apply h-screen w-full md:basis-[15%] lg:basis-[18%];
+  }
+  /* .Link.active {
+    @apply bg-violet-600;
+  } */
+
+  /* Header */
+  .Header {
+    @apply bg-white md:bg-[rgba(247,_247,_253,_1)];
+
+    @apply border-b border-[rgba(212,_204,_255,_1)] md:border-solid;
+
+    @apply flex flex-row justify-between;
+    @apply p-4 md:px-9 md:py-[14px] lg:px-11 lg:py-[18px] xl:px-[50px] xl:py-[23px];
+  }
+
+  .Header-Search {
+    @apply hidden md:block relative;
+  }
+  .User-Details {
+    /* @apply mr-[10px]; */
+    @apply cursor-pointer;
+  }
+
+  /* 
+  ///////////////////////////
+  DASHBOARD
+  ///////////////////////////
+  */
+  .Dashboard {
+    @apply text-[rgba(31,_31,_31,_1)];
+  }
+  .DashboardContainerOne{
+    @apply mb-8 md:mb-9 lg:mb-10;
+  }
+
+  .DashboardStats{
+    @apply flex flex-row items-center justify-between bg-[rgba(255,_225,_229,_1)] rounded-lg;
+    @apply px-3 py-[15.5px] md:px-6 md:py-5 xl:pt-[28px] xl:pb-[21px] xl:pl-[40px] xl:pr-[30px];
+    @apply mx-0 mb-4 md:mx-[10px] md:mb-0;
+    @apply basis-full lg:basis-[33.3%]
+  }
+}
+
+@layer utilities {
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+      "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+      "Helvetica Neue", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  .span-color {
+    color: rgba(80, 7, 224, 1);
+  }
+  .bg {
+    background-image: url("../src/assets/bg.png");
+  }
+  .btn-color {
+    background-color: rgba(80, 7, 224, 1);
+  }
+  .details {
     letter-spacing: 2px;
     line-height: 40px;
     font-size: 24px;
     opacity: 0.75;
   }
-  .outline-color{
-    outline-color:  rgba(80, 7, 224, 1);
+  .outline-color {
+    outline-color: rgba(80, 7, 224, 1);
   }
-.small-text{
-  color:  rgba(170, 168, 168, 1);
-  line-height: 24px;
-  font-size: 14px;
-}
-.input-details{
-  font-weight: 700;
-  font-size: 15px;
-  color: rgba(105, 111, 121, 1);
-
-  
-}
-.show{
-  position: absolute;
-  right: 12px;
-}
-h1{
-  line-height: 36px;
-  font-size: 30px;
-}
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  .small-text {
+    color: rgba(170, 168, 168, 1);
+    line-height: 24px;
+    font-size: 14px;
+  }
+  .input-details {
+    font-weight: 700;
+    font-size: 15px;
+    color: rgba(105, 111, 121, 1);
+  }
+  .show {
+    position: absolute;
+    right: 12px;
+  }
+  h1 {
+    line-height: 36px;
+    font-size: 30px;
+  }
+  code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+      monospace;
+  }
 }
