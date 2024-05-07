@@ -59,6 +59,17 @@ export const NavbarData = [
   },
 ];
 
+// BOOKING HEADER DATA
+
+export const BookingHeader = [
+  { id: 1, name: "Customer name" },
+  { id: 2, name: "Service" },
+  { id: 3, name: "Booking status" },
+  { id: 4, name: "Payment status" },
+  { id: 5, name: "Date" },
+  { id: 6, name: "Actions" },
+];
+
 // DASHBOARD INDEX
 // export const DashboardStatsData = [
 //   {
