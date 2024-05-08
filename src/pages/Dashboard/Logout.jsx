@@ -2,7 +2,7 @@ import React from 'react'
 
 const Logout = () => {
   return (
-    <div>Logout</div>
+    <div className='fixed top-1/2'>Logout</div>
   )
 }
 
