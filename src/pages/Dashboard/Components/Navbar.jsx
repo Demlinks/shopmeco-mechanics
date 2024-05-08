@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import {
   CloseNav,
@@ -8,19 +8,32 @@ import {
   MobileBGRect,
 } from "../../../assets/images";
 import { NavbarData } from "../../../Data/Constant Data";
-import { useLocation } from "react-router-dom";
+// import { useLocation } from "react-router-dom";
 const Navbar = ({ toggle, setToggle }) => {
-  const location = useLocation();
-  const { pathname } = location;
-  const splitLocation = pathname.split("/");
+  const [activeLink, setActiveLink] = useState(0);
+
+  const handleActiveLink = (index) => {
+    setActiveLink(index);
+  };
+  // const location = useLocation();
+  // const { pathname } = location;
+  // const splitLocation = pathname.split("/");
   // console.log(location);
+
+  // Overflow control on Mobile toggle
+  useEffect(() => {
+    document.body.style.overflow = toggle ? "hidden" : "auto";
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, [toggle]);
 
   // Preload active images
   useEffect(() => {
     NavbarData.forEach((navbar) => {
       const image = new Image();
       image.src = navbar.iconActive;
-      // image.src = navbar.icon;
+      image.src = navbar.icon;
     });
   }, []);
   return (
@@ -75,7 +88,10 @@ const Navbar = ({ toggle, setToggle }) => {
                     ? "flex flex-row px-8 py-4 md:px-2 md:py-[7px] mb-2 lg:mb-3 xl:mb-4 2xl:mb-5 rounded-none md:rounded-md bg-[rgba(245,_243,_255,_1)] text-[rgba(31,_31,_31,_1)]  md:text-[rgba(80,_7,_224,_1)]"
                     : "flex flex-row px-8 py-4 md:px-2 md:py-[7px] mb-2 lg:mb-3 xl:mb-4 2xl:mb-5 rounded-none md:rounded-md bg-transparent text-[rgba(212,_204,_255,_1)] hover:bg-black/30"
                 }
-                onClick={() => setToggle(false)}
+                onClick={() => {
+                  setToggle(false);
+                  handleActiveLink(index);
+                }}
                 // style={({ isActive }) => {
                 //   return isActive
                 //     ? { backgroundColor: "rgba(245, 243, 255, 1)" }
@@ -84,12 +100,7 @@ const Navbar = ({ toggle, setToggle }) => {
               >
                 <div className="min-w-5 h-auto mr-2 hidden md:block">
                   <img
-                    src={
-                      splitLocation[splitLocation.length - 1] ===
-                      navbar.iconActiveLink
-                        ? navbar.iconActive
-                        : navbar.icon
-                    }
+                    src={index === activeLink ? navbar.iconActive : navbar.icon}
                     alt="icon"
                     className="size-full object-center"
                   />
@@ -100,7 +111,7 @@ const Navbar = ({ toggle, setToggle }) => {
           })}
         </div>
         <div className="">
-        {/* absolute bottom-0 w-full mb-12 md:mb-0 md:static */}
+          {/* absolute bottom-0 w-full mb-12 md:mb-0 md:static */}
           {NavbarData.slice(4).map((navbar, index) => {
             return (
               <NavLink
@@ -111,7 +122,10 @@ const Navbar = ({ toggle, setToggle }) => {
                     ? "flex flex-row px-8 py-4 md:px-2 md:py-[7px] mb-2 lg:mb-3 xl:mb-4 2xl:mb-5 rounded-none md:rounded-md bg-[rgba(245,_243,_255,_1)] text-[rgba(31,_31,_31,_1)]  md:text-[rgba(80,_7,_224,_1)]"
                     : "flex flex-row px-8 py-4 md:px-2 md:py-[7px] mb-2 lg:mb-3 xl:mb-4 2xl:mb-5 rounded-none md:rounded-md bg-transparent text-[rgba(212,_204,_255,_1)] hover:bg-black/30"
                 }
-                onClick={() => setToggle(false)}
+                onClick={() => {
+                  setToggle(false);
+                  handleActiveLink(index + 4);
+                }}
                 // style={({ isActive }) => {
                 //   return isActive
                 //     ? { backgroundColor: "black" }
@@ -121,10 +135,7 @@ const Navbar = ({ toggle, setToggle }) => {
                 <div className="min-w-5 h-auto mr-2 hidden md:block">
                   <img
                     src={
-                      splitLocation[splitLocation.length - 1] ===
-                      navbar.iconActiveLink
-                        ? navbar.iconActive
-                        : navbar.icon
+                      index + 4 === activeLink ? navbar.iconActive : navbar.icon
                     }
                     alt="icon"
                     className="size-full object-center"

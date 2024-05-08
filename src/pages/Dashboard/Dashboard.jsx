@@ -1,7 +1,23 @@
 import React from "react";
-import { DashboardLineOne, DashboardLineThree, DashboardLineTwo, TotalServices } from "../../assets/images/Dashboard";
+import {
+  DashboardLineOne,
+  DashboardLineThree,
+  DashboardLineTwo,
+  TotalResquests,
+  TotalServices,
+  UnreadMessages,
+} from "../../assets/images/Dashboard";
 
-const Dashboard = ({totalServices = 110, totalRequests = 231, unreadMessages = 30 }) => {
+import { BookingData } from "../../Data/Dummy Data/db";
+import { Link } from "react-router-dom";
+import BookingListingDesktop from "./Components/BookingListingDesktop";
+import BookingListingMobile from "./Components/BookingListingMobile";
+
+const Dashboard = ({
+  totalServices = 110,
+  totalRequests = BookingData.length,
+  unreadMessages = 30,
+}) => {
   return (
     <div className="Dashboard">
       <div className="DashboardContainerOne">
@@ -39,17 +55,17 @@ const Dashboard = ({totalServices = 110, totalRequests = 231, unreadMessages = 3
             <div className="flex flex-row items-center md:items-center lg:items-start md:flex-col mr-[10px] xs:mr-3 md:mr-0 lg:mr-3">
               <div className="p-2 md:p-[13px] mr-[10px] xs:mr-3 md:mr-0 mb-0 md:mb-[15px] rounded-full bg-white">
                 <img
-                  src={TotalServices}
-                  alt="TotalServices"
+                  src={TotalResquests}
+                  alt="totalRequests"
                   className="w-full h-auto max-w-6 object-center"
                 />
               </div>
               <div className="my-auto text-left md:text-center lg:text-left">
                 <div className="font-Inter font-semibold text-lg leading-[21.78px] md:text-2xl lg:text-[28px] xl:text-[32px] md:leading-[38.73px] mb-1 md:mb-[5px]">
-                {totalRequests}
+                  {totalRequests}
                 </div>
                 <div className="font-Poppins font-medium text-sm leading-[19.06px] md:text-base lg:text-lg md:leading-[24.74px] text-[rgba(170,_168,_168,_1)]">
-                Total Requests
+                  Total Requests
                 </div>
               </div>
             </div>
@@ -65,14 +81,14 @@ const Dashboard = ({totalServices = 110, totalRequests = 231, unreadMessages = 3
             <div className="flex flex-row items-center md:items-center lg:items-start md:flex-col mr-[10px] xs:mr-3 md:mr-0 xl:mr-0">
               <div className="p-2 md:p-[13px] mr-[10px] xs:mr-3 md:mr-0 mb-0 md:mb-[15px] rounded-full bg-white">
                 <img
-                  src={TotalServices}
-                  alt="TotalServices"
+                  src={UnreadMessages}
+                  alt="UnreadMessages"
                   className="w-full h-auto max-w-6 object-center"
                 />
               </div>
               <div className="my-auto text-left md:text-center lg:text-left">
                 <div className="font-Inter font-semibold text-lg leading-[21.78px] md:text-2xl lg:text-[28px] xl:text-[32px] md:leading-[38.73px] mb-1 md:mb-[5px]">
-                {unreadMessages}
+                  {unreadMessages}
                 </div>
                 <div className="font-Poppins font-medium text-sm leading-[19.06px] md:text-base lg:text-lg md:leading-[24.74px] text-[rgba(170,_168,_168,_1)]">
                   Unread Messages
@@ -94,18 +110,19 @@ const Dashboard = ({totalServices = 110, totalRequests = 231, unreadMessages = 3
           <div className="text-sm md:text-lg lg:text-xl font-semibold font-Inter">
             Latest Requests
           </div>
-          <div className="text-sm md:text-base font-semibold text-[rgba(80,_7,_224,_1)]">
+          <Link
+            to="booking"
+            className="text-sm md:text-base font-semibold text-[rgba(80,_7,_224,_1)]"
+          >
             <span className=" font-Poppins no-underline md:underline mr-1 md:mr-[5px]">
               See All
             </span>
             <span className="text-lg my-auto">{">"}</span>
-          </div>
+          </Link>
         </div>
-        <div className="">
-          dhjhf Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-          Provident odit quia, enim repellat modi hic mollitia ab laudantium
-          voluptate suscipit nulla ut rem at molestiae sed ipsa? Quaerat,
-          minima. Sapiente.
+        <div>
+          <BookingListingDesktop isHome={true} />
+          <BookingListingMobile isHome={true}/>
         </div>
       </div>
     </div>

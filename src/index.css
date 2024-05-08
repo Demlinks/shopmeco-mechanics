@@ -8,23 +8,31 @@
   * {
     @apply box-border;
   }
-  /* DashboardLayout */
+  /*
+  //////////////////
+  DASHBOARD LAYOUT
+  //////////////////
+   */
   .DashboardLayout {
     @apply flex flex-row;
     @apply relative;
     @apply bg-white md:bg-[rgba(251,_251,_254,_0.98)];
-  
+
     @apply w-full;
     /* @apply overflow-hidden; */
   }
 
-  /* Navbar */
+  /*
+  ////////////////
+  NAVBAR
+  ////////////////
+  */
   .Navbar {
     @apply flex-col;
     @apply fixed;
     @apply top-0 z-50;
 
-    @apply px-0 md:pl-[27px] md:pr-[25px] lg:pl-10 lg:pr-9;
+    @apply px-0 md:pl-[22px] md:pr-[20px] lg:pl-[34px] lg:pr-[30px] xl:pl-10 xl:pr-9 2xl:pl-[56px] 2xl:pr-[45px];
     @apply bg-[rgba(83,_17,_214,_1)] md:bg-[rgba(80,_7,_224,_1)];
     @apply h-screen w-full md:w-[23%] lg:w-[19.5%] xl:w-[18%];
   }
@@ -32,7 +40,11 @@
     @apply bg-violet-600;
   } */
 
-  /* Header */
+  /* 
+  //////////////////
+  Header
+  //////////////////
+  */
   .Header {
     @apply bg-white md:bg-[rgba(247,_247,_253,_1)];
 
@@ -40,9 +52,8 @@
 
     @apply flex flex-row justify-between;
     @apply p-4 md:px-9 md:py-[14px] lg:px-11 lg:py-[18px] xl:px-[50px] xl:py-[23px];
-    @apply fixed top-0 right-0;
+    @apply fixed top-0 right-0 z-10;
     @apply left-0 md:left-[23%] lg:left-[19.5%] xl:left-[18%];
-
   }
 
   .Header-Search {
@@ -80,6 +91,25 @@
     @apply bg-white;
     @apply px-0 py-[16px] md:py-[20px] md:px-[25px] lg:py-[30px] lg:px-[40px];
   }
+
+  /* 
+  ////////////////////
+  BOOKING
+  ///////////////////
+  */
+  .Booking{
+
+  }
+
+  .Booking-Search{
+    @apply block static md:relative cursor-pointer;
+    @apply border border-[rgba(212,_204,_255,_1)] md:border-transparent border-solid rounded-lg;
+  }
+  
+  .BookingLog {
+    @apply bg-white;
+    @apply px-0 py-[16px] md:py-[20px] md:px-[25px] lg:py-[30px] lg:px-[40px];
+  }
 }
 
 @layer utilities {
@@ -91,6 +121,11 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
+
+  /* tr > span{
+    padding-top: 25px;
+
+  } */
 
   .span-color {
     color: rgba(80, 7, 224, 1);
