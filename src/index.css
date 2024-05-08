@@ -52,7 +52,7 @@
 
     @apply flex flex-row justify-between;
     @apply p-4 md:px-9 md:py-[14px] lg:px-11 lg:py-[18px] xl:px-[50px] xl:py-[23px];
-    @apply fixed top-0 right-0;
+    @apply fixed top-0 right-0 z-10;
     @apply left-0 md:left-[23%] lg:left-[19.5%] xl:left-[18%];
   }
 
@@ -99,6 +99,11 @@
   */
   .Booking{
 
+  }
+
+  .Booking-Search{
+    @apply block static md:relative cursor-pointer;
+    @apply border border-[rgba(212,_204,_255,_1)] md:border-transparent border-solid rounded-lg;
   }
   
   .BookingLog {

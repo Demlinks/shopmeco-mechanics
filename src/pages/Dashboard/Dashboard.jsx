@@ -7,9 +7,11 @@ import {
   TotalServices,
   UnreadMessages,
 } from "../../assets/images/Dashboard";
-import BookingListing from "./Components/BookingListing";
+
 import { BookingData } from "../../Data/Dummy Data/db";
 import { Link } from "react-router-dom";
+import BookingListingDesktop from "./Components/BookingListingDesktop";
+import BookingListingMobile from "./Components/BookingListingMobile";
 
 const Dashboard = ({
   totalServices = 110,
@@ -119,7 +121,8 @@ const Dashboard = ({
           </Link>
         </div>
         <div>
-          <BookingListing isHome={true} />
+          <BookingListingDesktop isHome={true} />
+          <BookingListingMobile isHome={true}/>
         </div>
       </div>
     </div>

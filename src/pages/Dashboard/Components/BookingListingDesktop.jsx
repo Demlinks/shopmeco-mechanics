@@ -9,7 +9,7 @@ import {
 } from "../../../assets/images/Booking";
 import { Link } from "react-router-dom";
 
-const BookingListing = ({ isHome = false }) => {
+const BookingListingDesktop = ({ isHome = false }) => {
   const [BookingDataFilter, setBookingDataFilter] = useState([]);
   const [actionToggle, setActionToggle] = useState();
   useEffect(() => {
@@ -39,9 +39,9 @@ const BookingListing = ({ isHome = false }) => {
   // const BookingDataFilter = isHome ? BookingData.slice(0, 6) : BookingData;
   ///
   return (
-    <table className="w-full border-collapse">
+    <table className="w-full border-collapse hidden lg:table">
       <thead className="text-left">
-        <tr className="text-[rgba(181,_181,_181,_1)] text-lg leading-[18px]">
+        <tr className="text-[rgba(181,_181,_181,_1)] text-[16.5px] leading-[18px]">
           {BookingHeader.map((header, index) => {
             return (
               <th
@@ -204,4 +204,4 @@ const BookingListing = ({ isHome = false }) => {
   );
 };
 
-export default BookingListing;
+export default BookingListingDesktop;
