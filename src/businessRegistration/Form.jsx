@@ -1,4 +1,5 @@
 import React , {useState}from 'react'
+import { useNavigate } from 'react-router-dom'
 import '../index.css'
 import Register from './Register'
 import CompleteProfile from './CompleteProfile'
@@ -14,7 +15,9 @@ import Subscription from './Subscription'
 
 
 const Form = () => {
+  const navigate = useNavigate()
     const [page, setPage] = useState(0)
+
     const [formData, setFormData] = useState({
         fullname: "",
         email: "",
@@ -83,6 +86,8 @@ onClick={
     () => {
         if (page === FormTitles.length - 1) {
             console.log(formData);
+            navigate('/dashboard')
+
           } else {
             setPage((currentPage) => currentPage + 1);
           }

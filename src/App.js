@@ -7,6 +7,7 @@ import Getstarted from './pages/Getstarted';
 import Form from './businessRegistration/Form';
 import RootLayout from './pages/RootLayout';
 
+import Profile from './pages/Profile';
 function App() {
   return (
 <BrowserRouter>
@@ -16,8 +17,11 @@ function App() {
      <Route  index element={<Login/>} />
      <Route  path="/getstarted" element={<Getstarted/>} />
      <Route  path="/business-form" element={<Form/>} />
+ 
 
 </Route>
+
+<Route  path="/profile" element={<Profile/>} />
       </Routes>
     </BrowserRouter>
 
