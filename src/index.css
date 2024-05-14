@@ -127,6 +127,10 @@ margin-top: 100px;
   z-index: 1000;
 
 }
+.profile-details, .sub, .company, .workshop{
+  border-bottom: 1.5px solid #cfcccc;
+  padding-bottom: 50px;
+}
 @media (max-width: 768px) {
   
   .profile-content{

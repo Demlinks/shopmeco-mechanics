@@ -15,7 +15,7 @@ const Header = () => {
             <img src={search} alt="search" className='cursor-pointer me-2' />
         <input type="text" placeholder='Search or Type' className='outline-none w-full'/>
         </div>
-        <div className='flex  gap-2 md:gap-4items-center md:hidden'>
+        <div className='flex  gap-3 items-center md:hidden'>
             <button>
             <img src={bar} alt="toggle-bar" />
 
