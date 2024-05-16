@@ -1,15 +1,14 @@
 import React from 'react'
-import logo from '../assets/logo2.png'
+
 
 import '../index.css'
-// import title from '../assets/grp.png'
-// import rect from '../assets/Rectangle 35.png'
+
 
 
 const ShopMecoGradient = () => {
   return (
     <div className='w-5/12 hidden md:block bg bg-cover h-screen bg-no-repeat text-white'>
-    <img src={logo} alt="logo" className='w-[250px] m-8' />
+    <img src='../assets/logo2.png' alt="logo" className='w-[250px] m-8' />
    
     <div className='lg:w-[70%] mx-auto px-8 lg:px-4 mt-[100px]'>
 <div className="box box1 mb-8 "></div>

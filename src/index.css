@@ -14,7 +14,7 @@ body {
 color: rgba(80, 7, 224, 1);
 }
 .bg{
-  background-image: url('../src/assets/bg.png');
+  background: url('../public/assets/bg.png');
 }
 .btn-color{
   background-color:  rgba(80, 7, 224, 1);
@@ -108,7 +108,7 @@ code {
 }
 
 .nav-nav:hover img{
-  color: #5007E0 ;
+ filter:  invert(19%) sepia(98%) saturate(3014%) hue-rotate(256deg) brightness(77%) contrast(138%);
 }
 
 .profile-content{
@@ -141,5 +141,9 @@ margin-top: 100px;
     .header{
       margin-left: 0;
       padding: 0;
+    }
+    .nav-nav{
+   
+     border-radius: 0;
     }
   }

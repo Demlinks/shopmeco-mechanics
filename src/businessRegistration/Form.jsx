@@ -4,10 +4,10 @@ import '../index.css'
 import Register from './Register'
 import CompleteProfile from './CompleteProfile'
 import AlmostDone from './AlmostDone'
-import google from '../assets/google.png'
-import lock from '../assets/lock_24px.png'
-import bar from '../assets/bar.png'
-import logo2 from '../assets/logo2.png'
+
+
+
+
 
 
 import Subscription from './Subscription'
@@ -56,9 +56,9 @@ const Form = () => {
     <div>
           <div className='flex items-center md:hidden p-6'>
     <button> 
-        <img src={bar} alt="toggle" className='h-[18px] w-[24px] me-6 '/>
+        <img src='../assets/bar.png' alt="toggle" className='h-[18px] w-[24px] me-6 '/>
     </button>
-    <img src={logo2} alt="logo" className='h-[35px]' />
+    <img src='../assets/logo2.png' alt="logo" className='h-[35px]' />
 </div>
    
     <div className=' lg:py-[28px] md:py-[18px]  md:px-[20px] '>
@@ -105,7 +105,7 @@ onClick={
 </div>
 <button className='w-full mt-6 shadow-md rounded-lg py-3 border-2 font-bold hover:bg-gray-100'>
     <div className='flex justify-center items-center'>
-    <img src={google} alt="google" className='me-2 w-[20px] h-[20px]'/>
+    <img src='../assets/google.png' alt="google" className='me-2 w-[20px] h-[20px]'/>
 
     <p>Login with Google</p>
     </div>
@@ -114,7 +114,7 @@ onClick={
      </div>
 }
      <div className='flex justify-center items-center mt-4 small-text font-bold' >
-        <img src={lock} alt="lock"  className='me-2'/>
+        <img src='../assets/lock_24px.png' alt="lock"  className='me-2'/>
 <p>Your Information is safely secured</p>
 </div>
     </div>

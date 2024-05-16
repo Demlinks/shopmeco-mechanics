@@ -1,9 +1,9 @@
 import React, {useState} from 'react'
 import { Link } from 'react-router-dom';
 
- import logo2 from '../assets/logo2.png'
- import google from '../assets/google.png'
- import bar from '../assets/bar.png'
+
+
+
 import '../index.css'
 
 
@@ -35,9 +35,9 @@ const Login = () => {
      
         <div className='flex items-center md:hidden p-6'>
             <button> 
-                <img src={bar} alt="toggle" className='h-[18px] w-[24px] me-6 '/>
+                <img src='../assets/bar.png' alt="toggle" className='h-[18px] w-[24px] me-6 '/>
             </button>
-            <img src={logo2} alt="logo" className='h-[35px]' />
+            <img src='../assets/logo2.png' alt="logo" className='h-[35px]' />
         </div>
         <div className='lg:py-[28px] md:py-[18px]  md:px-[50px]' >
             <div className=' md:w-[400px] lg:w-[500px] w-full  mt-8 '>
@@ -85,7 +85,7 @@ const Login = () => {
 </div>
 <button className='w-full mt-6 shadow-md rounded-lg py-3 border-2 font-bold hover:bg-gray-100'>
     <div className='flex justify-center items-center'>
-    <img src={google} alt="google" className='me-2 w-[20px] h-[20px]'/>
+    <img src='../assets/google.png' alt="google" className='me-2 w-[20px] h-[20px]'/>
     <p className='hidden md:block'>Register with Google</p>
     <p className='md:hidden'>Login with Google</p>
     </div>
